@@ -1,12 +1,11 @@
-import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:love_stars/common/dao/StarDao.dart';
 import 'package:love_stars/common/model/StarModel.dart';
 import 'package:love_stars/common/style/AppStyle.dart';
 import 'package:love_stars/event/Events.dart';
 import 'package:love_stars/routers/application.dart';
 import 'package:love_stars/utils/TimeUtil.dart';
+import 'package:love_stars/widget/Line.dart';
 
 class CreatePage extends StatefulWidget {
   @override
@@ -65,10 +64,7 @@ class CreateState extends State<CreatePage>
                 new Expanded(
                   child: new Column(
                     children: <Widget>[
-                      new Container(
-                        height: 1,
-                        color: Colors.grey,
-                      ),
+                      new H_Line(),
                       _renderItem(
                           Icons.timer, "todo time", todoTime, _showTodoPick)
                     ],
@@ -111,11 +107,11 @@ class CreateState extends State<CreatePage>
           new Container(
             width: 10.0,
           ),
-          new Text(title, style: Constant.normalSubText),
+          new Text(title, style: AppStyle.normalSubText),
           new Container(
             width: 10.0,
           ),
-          new Expanded(child: new Text(value, style: Constant.normalText)),
+          new Expanded(child: new Text(value, style: AppStyle.normalText)),
           new Container(
             width: 10.0,
           ),

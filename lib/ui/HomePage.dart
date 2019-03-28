@@ -98,8 +98,8 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
         body: new TabBarView(controller: controller, children: <Widget>[
           new FirstPage(),
           new SecondPage(),
-//          new ThirdPage(),
-          new FourthPage()
+          new ThirdPage(),
+//          new FourthPage()
         ]),
         bottomNavigationBar: Material(
           color: const Color(0xFFF0EEEF), //底部导航栏主题颜色

@@ -6,4 +6,7 @@ class Config {
 
   /// //////////////////////////////////////常量////////////////////////////////////// ///
   static const TOKEN_KEY = "token";
+
+
+  static const THEME_COLOR = "thmecolor";
 }

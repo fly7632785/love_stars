@@ -3,13 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const int white = 0xFFFFFF;
+  static const int white = 0xFFFFFFFF;
   static const String primaryValueString = "#24292E";
   static const String primaryLightValueString = "#42464b";
   static const String primaryDarkValueString = "#121917";
   static const String miWhiteString = "#ececec";
   static const String actionBlueString = "#267aff";
   static const String webDraculaBackgroundColorString = "#282a36";
+
+  static const int lineColor = 0x803d3d3d;
 
   static const int primaryValue = 0xFF24292E;
   static const int primaryLightValue = 0xFF42464b;

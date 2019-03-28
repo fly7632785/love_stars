@@ -73,6 +73,13 @@ class StarDbProvider extends BaseDbProvider {
     return total;
   }
 
+  Future<int> getCollectTotal() async {
+    Database db = await getDataBase();
+    int total = Sqflite.firstIntValue(await db.rawQuery(
+        'SELECT COUNT(*) FROM $name where $columnCollectTime is not null'));
+    return total;
+  }
+
   Future<List<StarModel>> getCollectData(int page, int pageSize) async {
     Database db = await getDataBase();
     List<Map> maps = await db.query(name,
@@ -84,6 +91,7 @@ class StarDbProvider extends BaseDbProvider {
           columnDoneTime,
           columnCollectTime,
         ],
+        where: columnCollectTime + " is not null",
         limit: pageSize,
         orderBy: columnCollectTime + " DESC",
         offset: pageSize * page);

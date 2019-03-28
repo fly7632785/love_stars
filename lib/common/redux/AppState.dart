@@ -10,9 +10,10 @@ class AppState {
 
   List<StarModel> todoStarList = new List();
   List<StarModel> doneStarList = new List();
+  List<StarModel> collectStarList = new List();
 
 
-  AppState({this.themeData, this.todoStarList, this.doneStarList});
+  AppState({this.themeData, this.todoStarList, this.doneStarList,this.collectStarList});
 }
 
 AppState appReducer(AppState state, action) {
@@ -21,5 +22,6 @@ AppState appReducer(AppState state, action) {
     themeData: ThemeDataReducer(state.themeData, action),
     todoStarList: TodoStarReducer(state.todoStarList, action),
     doneStarList: DoneStarReducer(state.doneStarList, action),
+    collectStarList: CollectStarReducer(state.collectStarList, action),
   );
 }

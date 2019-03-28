@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:love_stars/ui/CollectPage.dart';
 import 'package:love_stars/ui/CreatePage.dart';
 import 'package:love_stars/ui/WelcomePage.dart';
 
@@ -9,6 +10,7 @@ class Routes {
   static String root = "/";
   static String home = "/home";
   static String create = "/create";
+  static String collect = "/collect";
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
@@ -25,5 +27,10 @@ class Routes {
             handlerFunc:
                 (BuildContext context, Map<String, List<String>> params) =>
                     CreatePage()));
+    router.define(collect,
+        handler: Handler(
+            handlerFunc:
+                (BuildContext context, Map<String, List<String>> params) =>
+                    CollectPage()));
   }
 }

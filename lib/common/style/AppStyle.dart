@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'AppColors.dart';
 
 ///文本样式
-class Constant {
+class AppStyle {
 
   static const String app_default_share_url = "https://github.com/CarGuo/GSYGithubAppFlutter";
 
@@ -13,6 +13,11 @@ class Constant {
   static const smallTextSize = 14.0;
   static const minTextSize = 12.0;
 
+  static const whiteText = TextStyle(
+    color: Color(AppColors.white),
+    fontSize: middleTextWhiteSize,
+  );
+  
   static const minText = TextStyle(
     color: Color(AppColors.subLightTextColor),
     fontSize: minTextSize,

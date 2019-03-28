@@ -43,6 +43,24 @@ class StarDao {
     }
   }
 
+  static getCollectStars(Store store, {page = 0, needDb = true}) async {
+    StarDbProvider provider = new StarDbProvider();
+    List<StarModel> list = await provider.getCollectData(page, Config.PAGE_SIZE);
+    int total = await provider.getCollectTotal();
+    if (list != null && list.length > 0) {
+      if (page == 0) {
+        store.dispatch(new RefreshCollectStarAction(list));
+      } else {
+        store.dispatch(new LoadMoreCollectStarAction(list));
+      }
+      return new DataResult(
+          new DoneListResult(list, Config.PAGE_SIZE, page, total), true);
+    } else {
+      return new DataResult(
+          new DoneListResult(list, Config.PAGE_SIZE, page, total), false);
+    }
+  }
+
   static insertStar(StarModel model) async {
     StarDbProvider provider = new StarDbProvider();
     await provider.insert(model.toJson());

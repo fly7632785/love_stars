@@ -11,6 +11,11 @@ final DoneStarReducer = combineReducers<List<StarModel>>([
   TypedReducer<List<StarModel>, LoadMoreDoneStarAction>(_loadmore),
 ]);
 
+final CollectStarReducer = combineReducers<List<StarModel>>([
+  TypedReducer<List<StarModel>, RefreshCollectStarAction>(_refresh),
+  TypedReducer<List<StarModel>, LoadMoreCollectStarAction>(_loadmore),
+]);
+
 List<StarModel> _refresh(List<StarModel> list, action) {
   if (list != null) {
     list.clear();
@@ -52,4 +57,16 @@ class LoadMoreDoneStarAction {
   final List<StarModel> list;
 
   LoadMoreDoneStarAction(this.list);
+}
+
+class RefreshCollectStarAction {
+  final List<StarModel> list;
+
+  RefreshCollectStarAction(this.list);
+}
+
+class LoadMoreCollectStarAction {
+  final List<StarModel> list;
+
+  LoadMoreCollectStarAction(this.list);
 }

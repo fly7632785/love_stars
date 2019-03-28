@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       initialState: new AppState(
           themeData: ThemeData(platform: TargetPlatform.android),
           doneStarList: new List(),
+          collectStarList: new List(),
           todoStarList: new List()));
 
   @override
